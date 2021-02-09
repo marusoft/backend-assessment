@@ -25,9 +25,9 @@ The application will expose two rest resources
 
 - Install mongodb database locally
 
-  - > For [Mac user](https://zellwk.com/blog/install-mongodb),this is step by step instruction
+  - > For [Mac user](https://zellwk.com/blog/install-mongodb), this is step by step instruction
 
-  - > For [Window user](https://treehouse.github.io/installation-guides/windows/mongo-windows.html),this is step by step instruction
+  - > For [Window user](https://treehouse.github.io/installation-guides/windows/mongo-windows.html), this is step by step instruction
 
   - > For [Linux user](https://www.tutorialkart.com/mongodb/install-mongodb-on-ubuntu/), this is step by step instruction
 

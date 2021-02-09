@@ -31,6 +31,17 @@ The application will expose two rest resources
 
   - > For [Linux user](https://www.tutorialkart.com/mongodb/install-mongodb-on-ubuntu/), this is step by step instruction
 
+- Verify mongodb installation
+  - > `mongo --version`
+
+- To start mongodb service
+  - > `sudo service mongod start` - Linux user
+  - > `brew services start mongodb-community` - Mac user
+  - > `C:\mongodb\bin\mongod.exe` - Window user
+  
+- Setup local mongoDb database  
+  - > `mongodb://localhost:27017/{db_name}` in server,js
+
 ## Start Development
 
 - To build the project
@@ -38,10 +49,4 @@ The application will expose two rest resources
 - To continuously watch for changes
   - > `npm run watch`
 - To run your app server
-
   - > `npm run start`
-
-- To start mongodb service
-  - > `sudo service mongod start` - Linux user
-  - > `brew services start mongodb-community` - Mac user
-  - > `C:\mongodb\bin\mongod.exe` - Window user

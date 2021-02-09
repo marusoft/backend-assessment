@@ -1,9 +1,4 @@
-/*
-START HERE
-NOTE:
-Don't forget to implement user authentication for the
-contact resource
-*/
+
 require('dotenv').config()
 
 import fs from 'fs';
@@ -42,9 +37,9 @@ app.listen(port, err => {
 	}
 	require('./utils/db');
 
-	fs.readdirSync(path.join(__dirname, 'resources')).map(file => {
-		require('./resources/' + file)(app);
-	});
+	// fs.readdirSync(path.join(__dirname, 'resources')).map(file => {
+	// 	require('./resources/' + file)(app);
+	// });
 
 	logger.info(
 		`app is now running on port ${port} in ${env} mode`

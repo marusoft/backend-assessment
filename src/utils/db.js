@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 const uri = 'mongodb://localhost:27017/contact';
 const dev = "dev"
 const connection = mongoose.connect(uri, {
-	useNewUrlParser: true, useUnifiedTopology: true
+	useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 });
 
 connection

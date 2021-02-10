@@ -38,8 +38,12 @@ The application will expose two rest resources
   - > `sudo service mongod start` - Linux user
   - > `brew services start mongodb-community` - Mac user
   - > `C:\mongodb\bin\mongod.exe` - Window user
-  
-- Setup local mongoDb database  
+
+- Create local mongoDb database  
+  - > run `mongo` for mongoDB shell
+  - > run `use {db_name}` to create a new database
+
+- Include the new database in the connection string
   - > `mongodb://localhost:27017/{db_name}` in server,js
 
 ## Start Development

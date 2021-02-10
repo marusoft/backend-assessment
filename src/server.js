@@ -1,8 +1,6 @@
 
 require('dotenv').config()
 
-import fs from 'fs';
-import path from 'path';
 import express from 'express';
 import expressWinston from 'express-winston';
 import bodyParser from 'body-parser';
@@ -30,6 +28,17 @@ app.use(expressWinston.logger({
 	ignoreRoute: function (req, res) { return false; } // optional: allows to skip some log messages based on request and/or response
 }));
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message:
+      "Hello Assessment",
+  });
+});
+
+// Require Notes routes
+// require("../src/resources/auth")(app);
+
+
 app.listen(port, err => {
 	if (err) {
 		logger.error(err);
@@ -37,13 +46,10 @@ app.listen(port, err => {
 	}
 	require('./utils/db');
 
-	// fs.readdirSync(path.join(__dirname, 'resources')).map(file => {
-	// 	require('./resources/' + file)(app);
-	// });
+	require("../src/resources/auth")(app);
 
 	logger.info(
 		`app is now running on port ${port} in ${env} mode`
 	);
 });
-
 module.exports = app;

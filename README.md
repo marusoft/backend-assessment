@@ -76,7 +76,7 @@ The application will expose two rest resources
 #### API Routes
 
 | URI                                       | HTTP Method | Description                      |
-| ------------------------------------------------------- | ---------------------------------|
+| ----------------------------------------- | ----------- | -------------------------------- |
 | <code>/contact/createContact</code>       | `POST`      | Create contact address           |
 | <code>/contact/getAllContact</code>       | `GET`       | Fetch all contact address        |
 | <code>/contact/getAContact/{_id}</code>   | `GET`       | Fetch a single contact address   |

@@ -41,10 +41,13 @@ The application will expose two rest resources
 
 - Create local mongoDb database  
   - > run `mongo` for mongoDB shell
-  - > run `use {db_name}` to create a new database
+  - > run `use contact` to create a new database
 
 - Include the new database in the connection string
-  - > `mongodb://localhost:27017/{db_name}` in server,js
+  - > `mongodb://localhost:27017/contact` in server.js
+
+- Create/configure `.env` environment with your credentials. A sample `.env.example` file has been provided to get you started. Make a duplicate of `.env.example` and rename to `.env`, then configure your credentials.
+
 
 ## Start Development
 
@@ -54,3 +57,29 @@ The application will expose two rest resources
   - > `npm run watch`
 - To run your app server
   - > `npm run start`
+
+
+- To check collections in the database after data persistence
+  - `db.users.find()`
+  - `db.contacts.find()`
+
+
+### API ENDPOINTS
+
+#### Authentication
+
+| URI                       | HTTP Method | Description       |
+| --------------------------| ----------- | ----------------- |
+| <code>/auth/signup</code> | `POST`      | Create an account |
+| <code>/auth/login</code>  | `POST`      | Log-in to account |
+
+#### API Routes
+
+| URI                                       | HTTP Method | Description                      |
+| ------------------------------------------------------- | ---------------------------------|
+| <code>/contact/createContact</code>       | `POST`      | Create contact address           |
+| <code>/contact/getAllContact</code>       | `GET`       | Fetch all contact address        |
+| <code>/contact/getAContact/{_id}</code>   | `GET`       | Fetch a single contact address   |
+| <code>/contact/updateContact/{_id}</code> | `PATCH`     | Update a contact address         |
+| <code>/contact/removeContact/{_id}</code> | `PATCH`     | Delete a single contact address  |
+

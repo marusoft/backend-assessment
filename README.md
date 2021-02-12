@@ -80,6 +80,6 @@ The application will expose two rest resources
 | <code>/contact/createContact</code>       | `POST`      | Create contact address           |
 | <code>/contact/getAllContact</code>       | `GET`       | Fetch all contact address        |
 | <code>/contact/getAContact/{_id}</code>   | `GET`       | Fetch a single contact address   |
-| <code>/contact/updateContact/{_id}</code> | `PATCH`     | Update a contact address         |
-| <code>/contact/removeContact/{_id}</code> | `PATCH`     | Delete a single contact address  |
+| <code>/contact/updateContact/{_id}</code> | `PUT`     | Update a contact address         |
+| <code>/contact/removeContact/{_id}</code> | `DELETE`     | Delete a single contact address  |
 

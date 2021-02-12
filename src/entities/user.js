@@ -1,5 +1,4 @@
 import mongoose, { Schema } from 'mongoose';
-import bcrypt from 'mongoose-bcrypt';
 import timestamps from 'mongoose-timestamp';
 import mongooseStringQuery from 'mongoose-string-query';
 
@@ -24,7 +23,6 @@ export const UserSchema = new Schema(
 		password: {
 			type: String,
 			required: true,
-			bcrypt: true
 		},
 		name: {
 			type: String,
@@ -35,7 +33,7 @@ export const UserSchema = new Schema(
 	{ collection: 'users' }
 )
 
-UserSchema.plugin(bcrypt);
+
 UserSchema.plugin(timestamps);
 UserSchema.plugin(mongooseStringQuery);
 

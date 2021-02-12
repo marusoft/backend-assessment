@@ -1,5 +1,6 @@
 import User from "../entities/user";
 import logger from "../utils/logger";
+import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken";
 import config from "../config";
 
@@ -19,12 +20,12 @@ const signup = async (req, res) => {
         error: `User with ${savedUser.email} already exist, please login`,
       });
     }
-
+    const hashpassword = await bcrypt.hash(password, 12);
     const user = new User({
       name,
       username,
       email,
-      password,
+      password: hashpassword
     });
     const newUser = await user.save();
     const { _id } = newUser;
@@ -52,7 +53,9 @@ const login = async (req, res) => {
         error: 'email or pasword incorrect',
       });
     }
-    if (userExist.password) {
+
+    const comparePassword = await bcrypt.compare(password, userExist.password);
+    if (comparePassword) {
       const token = jwt.sign({ _id: userExist._id }, config.jwt_secret);
 
       const {
